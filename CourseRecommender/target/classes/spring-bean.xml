@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	<bean name="b1" class="org.com.course.Course">
+	<constructor-arg value="Java"/>
+	<constructor-arg value="KsRao"/>
+	<constructor-arg value="100"/>
+	</bean>
+	<bean name="b2" class="org.com.course.Course">
+	<constructor-arg value="python"/>
+	<constructor-arg value="subhash"/>
+	<constructor-arg value="50"/>
+	</bean>
+	<bean name="b3" class="org.com.course.Course">
+	<constructor-arg value="c"/>
+	<constructor-arg value="sandeep"/>
+	<constructor-arg value="20"/>
+	</bean>
+	<bean name="courselist" class="org.com.course.CourseList">
+	<property name="courseList">
+	<list>
+	<ref bean="b1"/>
+	<ref bean="b2"/>
+	<ref bean="b3"/>
+	</list>
+	</property>
+	</bean>
+
+</beans>
