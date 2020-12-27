@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	<bean name="address" class="org.hcl.domain.Address">
+	<constructor-arg value="13"/>
+	<constructor-arg value="raman nagar" />
+	<constructor-arg value="near ramana asramam,velpur"/>
+	</bean>
+	<bean name="emp" class="org.hcl.domain.Emp">
+	<constructor-arg value="1"/>
+	<constructor-arg value="tanuja" />
+	<constructor-arg  ref="address"/>
+	</bean>
+	<bean name="c1" class="org.hcl.domain.Course">
+	<constructor-arg value="1"/>
+	<constructor-arg value="java"/>
+	<constructor-arg value="2"/>
+	</bean>
+	<bean name="c2" class="org.hcl.domain.Course">
+	<constructor-arg value="2"/>
+	<constructor-arg value="Hadoop"/>
+	<constructor-arg value="3"/>
+	</bean>
+	<bean name="university" class="org.hcl.domain.University">
+	<property name="id" value="1"/>
+	<property name="name" value="HCLAcademy"/>
+	<property name="coursesOffered" >
+		<list>
+		<ref bean="c1"/>
+		<ref bean="c2"/>
+		</list>
+	</property>
+	</bean>
+	
+
+</beans>

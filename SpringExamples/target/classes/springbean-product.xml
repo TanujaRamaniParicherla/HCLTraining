@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	<bean name="b1" class="org.hcl.product.Product">
+		<constructor-arg value="1" />
+		<constructor-arg value="shampoo" />
+		<constructor-arg value="50" />
+	</bean>
+	<bean name="b2" class="org.hcl.product.Product">
+		<constructor-arg value="2" />
+		<constructor-arg value="soap" />
+		<constructor-arg value="100" />
+	</bean>
+	<bean name="cart" class="org.hcl.product.ShoppingCart">
+		<property name="products">
+		<list>
+		<ref bean="b1"/>
+		<ref bean="b2"/>
+		</list>
+		</property>
+	</bean>
+	<bean name="cashier" class="org.hcl.product.Cashier">
+	<constructor-arg value="C://HCL/"/>
+	<constructor-arg value="productinformation"/>
+	</bean>
+</beans>
+	
+
+
